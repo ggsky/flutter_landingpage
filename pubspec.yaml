@@ -1,5 +1,5 @@
 name: applandingpage
-description: A new Flutter project.
+description: app介绍性网页.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 version: 1.0.0+1
@@ -20,4 +20,5 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-
+  assets:
+    - assets/

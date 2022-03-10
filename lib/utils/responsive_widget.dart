@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+/// Description: 响应式布局
+/// Time       : 03/10/2022 Thursday
+/// Author     : liuyuqi.gov@msn.cn
 class ResponsiveWidget extends StatelessWidget {
   final Widget largeScreen;
   final Widget? mediumScreen;

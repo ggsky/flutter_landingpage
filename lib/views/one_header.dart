@@ -7,32 +7,27 @@ import 'one_header_r.dart';
 class OneHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    Size _size = MediaQuery.of(context).size;
     return Container(
-      width: MediaQuery.of(context).size.width,
+      width: _size.width,
       alignment: Alignment.center,
-      padding: EdgeInsets.only(bottom: 50, top: 70),
-      decoration: BoxDecoration(
-          gradient: LinearGradient(
-              colors: [const Color(0xffFEB692), const Color(0xffEA5455)])),
+      padding: const EdgeInsets.only(bottom: 50, top: 70),
+      decoration: const BoxDecoration(
+          gradient:
+              LinearGradient(colors: [Color(0xffFEB692), Color(0xffEA5455)])),
       child: ResponsiveWidget(
         largeScreen: Container(
-          width: MediaQuery.of(context).size.width > 1000
-              ? 1000
-              : MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
+          width: _size.width > 1000 ? 1000 : _size.width,
+          height: _size.height,
           child: Row(
             children: <Widget>[
               Container(
-                  width: MediaQuery.of(context).size.width > 1000
-                      ? 500
-                      : MediaQuery.of(context).size.width / 2,
+                  width: _size.width > 1000 ? 500 : _size.width / 2,
                   child: OneHeaderL()),
               Container(
-                  width: MediaQuery.of(context).size.width > 1000
-                      ? 500
-                      : MediaQuery.of(context).size.width / 2,
+                  width: _size.width > 1000 ? 500 : _size.width / 2,
                   child: OneHeaderR(
-                    assetPath: "header_screenshot.png",
+                    assetPath: "header_screenshot.jpg",
                     fixedSize: true,
                   ))
             ],
@@ -41,10 +36,11 @@ class OneHeader extends StatelessWidget {
         smallScreen: Column(
           children: <Widget>[
             Container(
-                padding: EdgeInsets.symmetric(vertical: 20),
+                //水平padding 20
+                padding: const EdgeInsets.symmetric(vertical: 20),
                 child: OneHeaderL()),
             OneHeaderR(
-              assetPath: "header_screenshot.png",
+              assetPath: "header_screenshot.jpg",
               fixedSize: false,
             )
           ],

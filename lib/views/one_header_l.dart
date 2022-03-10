@@ -1,16 +1,11 @@
 import 'package:applandingpage/data/general_data.dart';
+import 'package:applandingpage/utils/app_util.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
+/// Description: 头部左右布局-左
+/// Time       : 03/10/2022 Thursday
+/// Author     : liuyuqi.gov@msn.cn
 class OneHeaderL extends StatelessWidget {
-  launchURL(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -51,19 +46,19 @@ class OneHeaderL extends StatelessWidget {
             children: <Widget>[
               GestureDetector(
                   onTap: () {
-                    launchURL(playStoreUrl);
+                    AppUtil.launchURL(playStoreUrl);
                   },
                   child: Image.asset(
-                    "assets/google_play_button.png",
+                    "assets/google_play_button.jpg",
                     width: 150,
                     height: 50,
                   )),
               GestureDetector(
                   onTap: () {
-                    launchURL(playStoreUrl);
+                    AppUtil.launchURL(playStoreUrl);
                   },
                   child: Image.asset(
-                    "assets/app_store_badge.png",
+                    "assets/app_store_badge.jpg",
                     width: 180,
                     height: 130,
                   )),

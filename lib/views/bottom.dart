@@ -1,37 +1,37 @@
+
 import 'package:applandingpage/data/general_data.dart';
 import 'package:flutter/material.dart';
 
-class SecondHeader extends StatelessWidget {
+class Bottom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.only(top: 50, right: 40, left: 40),
       width: MediaQuery.of(context).size.width,
-      padding: EdgeInsets.symmetric(vertical: 60, horizontal: 30),
       color: Colors.white,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          Image.asset(
-            "assets/test.jpg",
-            width: 40,
-            height: 40,
-          ),
-          SizedBox(
-            height: 20,
-          ),
           Text(
-            maintitle,
+            closingTitle,
             textAlign: TextAlign.center,
             style: TextStyle(
-                fontSize: 25, color: headerColor, fontWeight: FontWeight.w500),
+                fontSize: 25,
+                fontWeight: FontWeight.w500,
+                color: Color(0xCC262626)),
           ),
           SizedBox(
             height: 8,
           ),
           Text(
-            maindescription,
+            closingDescription,
             textAlign: TextAlign.center,
-            style: TextStyle(fontWeight: FontWeight.w300),
+            style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300),
           ),
+          SizedBox(
+            height: 24,
+          ),
+          Image.asset("assets/" + coverImage)
         ],
       ),
     );

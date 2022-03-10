@@ -1,6 +1,9 @@
 import 'package:applandingpage/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
+/// Description: 入口
+/// Time       : 03/10/2022 Thursday
+/// Author     : liuyuqi.gov@msn.cn
 void main() {
   runApp(const MyApp());
 }
@@ -21,4 +24,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
