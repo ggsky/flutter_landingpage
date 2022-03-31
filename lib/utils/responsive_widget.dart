@@ -8,7 +8,7 @@ class ResponsiveWidget extends StatelessWidget {
   final Widget? mediumScreen;
   final Widget? smallScreen;
 
-  ResponsiveWidget(
+  const ResponsiveWidget(
       {Key? key,
       required this.largeScreen,
       this.mediumScreen,
