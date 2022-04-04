@@ -1,5 +1,5 @@
 name: applandingpage
-description: app介绍性网页.
+description: app 介绍性网页.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 version: 1.0.0+1
