@@ -1,6 +1,6 @@
-import 'package:applandingpage/data/general_data.dart';
-import 'package:applandingpage/model/feature_tile_model.dart';
-import 'package:applandingpage/utils/responsive_widget.dart';
+import 'package:flutter_landingpage/data/general_data.dart';
+import 'package:flutter_landingpage/model/feature_tile_model.dart';
+import 'package:flutter_landingpage/utils/responsive_widget.dart';
 import 'package:flutter/material.dart';
 
 class FeatureSlider extends StatefulWidget {

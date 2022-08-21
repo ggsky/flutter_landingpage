@@ -1,4 +1,4 @@
-import 'package:applandingpage/pages/home_page.dart';
+import 'package:flutter_landingpage/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 /// Description: 入口

@@ -1,5 +1,5 @@
-import 'package:applandingpage/data/general_data.dart';
-import 'package:applandingpage/model/app_feature_model.dart';
+import 'package:flutter_landingpage/data/general_data.dart';
+import 'package:flutter_landingpage/model/app_feature_model.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 

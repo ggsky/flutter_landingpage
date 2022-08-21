@@ -1,6 +1,6 @@
-import 'package:applandingpage/model/app_feature_model.dart';
-import 'package:applandingpage/model/feature_tile_model.dart';
-import 'package:applandingpage/model/testimonial_model.dart';
+import 'package:flutter_landingpage/model/app_feature_model.dart';
+import 'package:flutter_landingpage/model/feature_tile_model.dart';
+import 'package:flutter_landingpage/model/testimonial_model.dart';
 import 'package:flutter/material.dart';
 
 /// All the data

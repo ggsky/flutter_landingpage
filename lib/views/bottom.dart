@@ -1,5 +1,5 @@
 
-import 'package:applandingpage/data/general_data.dart';
+import 'package:flutter_landingpage/data/general_data.dart';
 import 'package:flutter/material.dart';
 
 class Bottom extends StatelessWidget {

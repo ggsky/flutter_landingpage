@@ -1,4 +1,4 @@
-import 'package:applandingpage/utils/responsive_widget.dart';
+import 'package:flutter_landingpage/utils/responsive_widget.dart';
 import 'package:flutter/material.dart';
 
 import 'one_header_l.dart';

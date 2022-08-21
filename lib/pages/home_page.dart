@@ -1,12 +1,12 @@
-import 'package:applandingpage/views/app_features_list.dart';
-import 'package:applandingpage/views/below_bottom.dart';
-import 'package:applandingpage/views/bottom.dart';
-import 'package:applandingpage/views/feature_slider.dart';
-import 'package:applandingpage/views/footer.dart';
-import 'package:applandingpage/views/one_header.dart';
-import 'package:applandingpage/views/second_header.dart';
-import 'package:applandingpage/views/textimonial.dart';
-import 'package:applandingpage/views/watch_video.dart';
+import 'package:flutter_landingpage/views/app_features_list.dart';
+import 'package:flutter_landingpage/views/below_bottom.dart';
+import 'package:flutter_landingpage/views/bottom.dart';
+import 'package:flutter_landingpage/views/feature_slider.dart';
+import 'package:flutter_landingpage/views/footer.dart';
+import 'package:flutter_landingpage/views/one_header.dart';
+import 'package:flutter_landingpage/views/second_header.dart';
+import 'package:flutter_landingpage/views/textimonial.dart';
+import 'package:flutter_landingpage/views/watch_video.dart';
 import 'package:flutter/material.dart';
 
 /// Description: 首页

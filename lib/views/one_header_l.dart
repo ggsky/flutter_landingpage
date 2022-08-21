@@ -1,5 +1,5 @@
-import 'package:applandingpage/data/general_data.dart';
-import 'package:applandingpage/utils/app_util.dart';
+import 'package:flutter_landingpage/data/general_data.dart';
+import 'package:flutter_landingpage/utils/app_util.dart';
 import 'package:flutter/material.dart';
 
 /// Description: 头部左右布局-左
