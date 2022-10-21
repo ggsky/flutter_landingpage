@@ -1,4 +1,4 @@
-import 'package:flutter_landingpage/data/general_data.dart';
+import 'package:flutter_landingpage/dao/general_data.dart';
 import 'package:flutter_landingpage/model/feature_tile_model.dart';
 import 'package:flutter_landingpage/utils/responsive_widget.dart';
 import 'package:flutter/material.dart';
@@ -9,10 +9,10 @@ class FeatureSlider extends StatefulWidget {
 }
 
 class _FeatureSliderState extends State<FeatureSlider> {
-  List<FeatureTileModel> features1 =  <FeatureTileModel>[];
-  List<FeatureTileModel> features2 =  <FeatureTileModel>[];
+  List<FeatureTileModel> features1 = <FeatureTileModel>[];
+  List<FeatureTileModel> features2 = <FeatureTileModel>[];
 
-  List<String> screenshots =  <String>[];
+  List<String> screenshots = <String>[];
 
   @override
   void initState() {
@@ -84,7 +84,7 @@ class _FeatureSliderState extends State<FeatureSlider> {
                           return Container(
                               margin: EdgeInsets.symmetric(horizontal: 40),
                               child:
-                              Image.asset("assets/" + screenshots[index]));
+                                  Image.asset("assets/" + screenshots[index]));
                         }),
                   ),
                   Container(
@@ -148,7 +148,6 @@ class _FeatureSliderState extends State<FeatureSlider> {
     );
   }
 }
-
 
 class FeaturesTile extends StatelessWidget {
   String title, description;

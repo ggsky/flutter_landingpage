@@ -1,5 +1,4 @@
-
-import 'package:flutter_landingpage/data/general_data.dart';
+import 'package:flutter_landingpage/dao/general_data.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 

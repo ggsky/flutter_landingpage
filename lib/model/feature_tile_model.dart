@@ -4,9 +4,7 @@ class FeatureTileModel {
   String imagePath = "";
 
   FeatureTileModel();
-
-  // FeatureTileModel({required this.title, required this.desc, required this.imagePath});
-
+  
   void setTitle(String gettitle) {
     title = gettitle;
   }

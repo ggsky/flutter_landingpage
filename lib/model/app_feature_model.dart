@@ -10,7 +10,9 @@ class AppFeatureModel {
   String imagePath = "";
 
   AppFeatureModel();
-
+  AppFeatureModel.fromJson(Map<String, dynamic> json){
+    
+  }
   // AppFeatureModel({required this.featureTitle, required this.featureDescription, required this.imagePath});
 
   void setFeatureTitle(String getTitle) {
