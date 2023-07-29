@@ -1,13 +1,15 @@
 import 'package:flutter_landingpage/dao/general_data.dart';
 import 'package:flutter_landingpage/model/app_feature_model.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 import 'one_header_r.dart';
 
 class AppFeaturesList extends StatefulWidget {
+  const AppFeaturesList({super.key});
+
   @override
-  _AppFeaturesListState createState() => _AppFeaturesListState();
+  State<AppFeaturesList> createState() => _AppFeaturesListState();
 }
 
 class _AppFeaturesListState extends State<AppFeaturesList> {
@@ -21,21 +23,18 @@ class _AppFeaturesListState extends State<AppFeaturesList> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      //列表
-      child: ListView.builder(
-          itemCount: myAppFeatures.length,
-          shrinkWrap: true,
-          physics: const ClampingScrollPhysics(),
-          itemBuilder: (context, index) {
-            return AppFeatureTile(
-              title: myAppFeatures[index].getFeatureTitle(),
-              description: myAppFeatures[index].getFeatureDescription(),
-              assetPath: myAppFeatures[index].getImagePath(),
-              tileIndex: index,
-            );
-          }),
-    );
+    return ListView.builder(
+        itemCount: myAppFeatures.length,
+        shrinkWrap: true,
+        physics: const ClampingScrollPhysics(),
+        itemBuilder: (context, index) {
+          return AppFeatureTile(
+            title: myAppFeatures[index].getFeatureTitle(),
+            description: myAppFeatures[index].getFeatureDescription(),
+            assetPath: myAppFeatures[index].getImagePath(),
+            tileIndex: index,
+          );
+        });
   }
 }
 
@@ -44,7 +43,7 @@ class AppFeatureTile extends StatelessWidget {
   int tileIndex;
 
   AppFeatureTile(
-      {required this.assetPath,
+      {super.key, required this.assetPath,
       required this.title,
       required this.description,
       required this.tileIndex});
@@ -58,9 +57,9 @@ class AppFeatureTile extends StatelessWidget {
             vertical: 30,
             horizontal: MediaQuery.of(context).size.width > 800 ? 40 : 20),
         decoration: tileIndex % 2 == 0
-            ? BoxDecoration(
+            ? const BoxDecoration(
                 gradient: LinearGradient(
-                    colors: [const Color(0xffFEB692), const Color(0xffEA5455)]))
+                    colors: [Color(0xffFEB692), Color(0xffEA5455)]))
             : null,
         child: tileIndex % 2 == 0
             ? Container(
@@ -82,13 +81,11 @@ class AppFeatureTile extends StatelessWidget {
                         mainAxisSize: MainAxisSize.min,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Container(
-                            child: OneHeaderR(
-                              assetPath: assetPath,
-                              fixedSize: true,
-                            ),
+                          OneHeaderR(
+                            assetPath: assetPath,
+                            fixedSize: true,
                           ),
-                          Container(
+                          SizedBox(
                             width: MediaQuery.of(context).size.width > 1000
                                 ? 500
                                 : MediaQuery.of(context).size.width / 2,
@@ -120,7 +117,7 @@ class AppFeatureTile extends StatelessWidget {
                         mainAxisSize: MainAxisSize.min,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Container(
+                          SizedBox(
                             width: MediaQuery.of(context).size.width > 1000
                                 ? 500
                                 : MediaQuery.of(context).size.width / 2,
@@ -130,11 +127,9 @@ class AppFeatureTile extends StatelessWidget {
                               myIndex: tileIndex,
                             ),
                           ),
-                          Container(
-                            child: OneHeaderR(
-                              assetPath: assetPath,
-                              fixedSize: true,
-                            ),
+                          OneHeaderR(
+                            assetPath: assetPath,
+                            fixedSize: true,
                           ),
                         ],
                       ),
@@ -147,11 +142,11 @@ class FeatureTileText extends StatelessWidget {
   int myIndex;
 
   FeatureTileText(
-      {required this.title, required this.description, required this.myIndex});
+      {super.key, required this.title, required this.description, required this.myIndex});
 
   launchURL(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
+    if (await canLaunchUrlString(url)) {
+      await launchUrlString(url);
     } else {
       throw 'Could not launch $url';
     }
@@ -179,7 +174,7 @@ class FeatureTileText extends StatelessWidget {
               fontWeight: FontWeight.w500,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 16,
           ),
           Text(
@@ -192,7 +187,7 @@ class FeatureTileText extends StatelessWidget {
                 fontSize: 20,
                 fontWeight: FontWeight.w300),
           ),
-          SizedBox(
+          const SizedBox(
             height: 16,
           ),
           Row(

@@ -1,4 +1,3 @@
-import 'package:flutter_landingpage/dao/api.dart';
 import 'package:flutter_landingpage/model/app_feature_model.dart';
 import 'package:flutter_landingpage/utils/request.dart';
 

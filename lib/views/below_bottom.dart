@@ -1,11 +1,13 @@
 import 'package:flutter_landingpage/dao/general_data.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class BelowBottom extends StatelessWidget {
+  const BelowBottom({super.key});
+
   launchURL(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
+    if (await canLaunchUrlString(url)) {
+      await launchUrlString(url);
     } else {
       throw 'Could not launch $url';
     }
@@ -14,20 +16,20 @@ class BelowBottom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 60, horizontal: 40),
+      padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 40),
       width: MediaQuery.of(context).size.width,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           gradient: LinearGradient(
-              colors: [const Color(0xffFEB692), const Color(0xffEA5455)])),
+              colors: [Color(0xffFEB692), Color(0xffEA5455)])),
       child: Column(
         children: <Widget>[
           Text(
             finaCalltoAction,
             textAlign: TextAlign.center,
-            style: TextStyle(
+            style: const TextStyle(
                 fontSize: 23, fontWeight: FontWeight.w300, color: Colors.white),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Row(

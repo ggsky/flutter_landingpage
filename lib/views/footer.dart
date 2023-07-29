@@ -1,6 +1,6 @@
 import 'package:flutter_landingpage/dao/general_data.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class Footer extends StatelessWidget {
   Color textColor = Colors.white;
@@ -11,8 +11,8 @@ class Footer extends StatelessWidget {
   Colors.black54 : Colors.white70;*/
 
   _launchURL(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
+    if (await canLaunchUrlString(url)) {
+      await launchUrlString(url);
     } else {
       throw 'Could not launch $url';
     }
@@ -21,10 +21,10 @@ class Footer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 40),
-      decoration: BoxDecoration(
+      padding: const EdgeInsets.symmetric(vertical: 40),
+      decoration: const BoxDecoration(
           gradient: LinearGradient(
-              colors: [const Color(0xffFEB692), const Color(0xffEA5455)])),
+              colors: [Color(0xffFEB692), Color(0xffEA5455)])),
       width: MediaQuery.of(context).size.width,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -41,7 +41,7 @@ class Footer extends StatelessWidget {
                   decoration: TextDecoration.underline),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 10,
           ),
           GestureDetector(
@@ -56,7 +56,7 @@ class Footer extends StatelessWidget {
                   decoration: TextDecoration.underline),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 10,
           ),
           GestureDetector(

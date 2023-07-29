@@ -4,8 +4,10 @@ import 'package:flutter_landingpage/utils/responsive_widget.dart';
 import 'package:flutter/material.dart';
 
 class FeatureSlider extends StatefulWidget {
+  const FeatureSlider({super.key});
+
   @override
-  _FeatureSliderState createState() => _FeatureSliderState();
+  State<FeatureSlider> createState() => _FeatureSliderState();
 }
 
 class _FeatureSliderState extends State<FeatureSlider> {
@@ -30,14 +32,14 @@ class _FeatureSliderState extends State<FeatureSlider> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: MediaQuery.of(context).size.width,
       child: Column(
         children: <Widget>[
-          SizedBox(
+          const SizedBox(
             height: 50,
           ),
-          Text(
+          const Text(
             "Feature Rich. No bloat.",
             textAlign: TextAlign.center,
             style: TextStyle(
@@ -45,102 +47,96 @@ class _FeatureSliderState extends State<FeatureSlider> {
                 fontWeight: FontWeight.w500,
                 color: Color(0xCC262626)),
           ),
-          SizedBox(
+          const SizedBox(
             height: 8,
           ),
-          Text(
+          const Text(
             "Donec sit eget metus odio. Aliqua dolor metus in tincidunt condimentum.",
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300),
           ),
-          SizedBox(
+          const SizedBox(
             height: 16,
           ),
-          Container(
-            child: ResponsiveWidget(
-              largeScreen: Row(
-                children: <Widget>[
-                  Container(
-                    width: MediaQuery.of(context).size.width / 3,
-                    child: ListView.builder(
-                        itemCount: features1.length,
-                        shrinkWrap: true,
-                        physics: ClampingScrollPhysics(),
-                        itemBuilder: (context, index) {
-                          return FeaturesTile(
-                            title: features1[index].getTitle(),
-                            description: features1[index].getDesc(),
-                          );
-                        }),
-                  ),
-                  Container(
-                    height: 650,
-                    width: MediaQuery.of(context).size.width / 3,
-                    child: ListView.builder(
-                        itemCount: screenshots.length,
-                        shrinkWrap: true,
-                        scrollDirection: Axis.horizontal,
-                        itemBuilder: (context, index) {
-                          return Container(
-                              margin: EdgeInsets.symmetric(horizontal: 40),
-                              child:
-                                  Image.asset("assets/" + screenshots[index]));
-                        }),
-                  ),
-                  Container(
-                    width: MediaQuery.of(context).size.width / 3,
-                    child: ListView.builder(
-                        itemCount: features2.length,
-                        physics: ClampingScrollPhysics(),
-                        shrinkWrap: true,
-                        itemBuilder: (context, index) {
-                          return FeaturesTile(
-                            title: features2[index].getTitle(),
-                            description: features2[index].getDesc(),
-                          );
-                        }),
-                  ),
-                ],
-              ),
-              smallScreen: Column(
-                children: <Widget>[
-                  Container(
-                    child: ListView.builder(
-                        itemCount: features1.length,
-                        shrinkWrap: true,
-                        physics: ClampingScrollPhysics(),
-                        itemBuilder: (context, index) {
-                          return FeaturesTile(
-                            title: features1[index].getTitle(),
-                            description: features1[index].getDesc(),
-                          );
-                        }),
-                  ),
-                  SizedBox(
-                    height: 650,
-                    width: 350,
-                    child: ListView.builder(
-                        shrinkWrap: true,
-                        scrollDirection: Axis.horizontal,
-                        itemCount: screenshots.length,
-                        itemBuilder: (context, index) {
-                          return Image.asset("assets/" + screenshots[index]);
-                        }),
-                  ),
-                  Container(
-                    child: ListView.builder(
-                        itemCount: features2.length,
-                        physics: ClampingScrollPhysics(),
-                        shrinkWrap: true,
-                        itemBuilder: (context, index) {
-                          return FeaturesTile(
-                            title: features2[index].getTitle(),
-                            description: features2[index].getDesc(),
-                          );
-                        }),
-                  ),
-                ],
-              ),
+          ResponsiveWidget(
+            largeScreen: Row(
+              children: <Widget>[
+                SizedBox(
+                  width: MediaQuery.of(context).size.width / 3,
+                  child: ListView.builder(
+                      itemCount: features1.length,
+                      shrinkWrap: true,
+                      physics: const ClampingScrollPhysics(),
+                      itemBuilder: (context, index) {
+                        return FeaturesTile(
+                          title: features1[index].getTitle(),
+                          description: features1[index].getDesc(),
+                        );
+                      }),
+                ),
+                SizedBox(
+                  height: 650,
+                  width: MediaQuery.of(context).size.width / 3,
+                  child: ListView.builder(
+                      itemCount: screenshots.length,
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (context, index) {
+                        return Container(
+                            margin: const EdgeInsets.symmetric(horizontal: 40),
+                            child:
+                                Image.asset("assets/${screenshots[index]}"));
+                      }),
+                ),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width / 3,
+                  child: ListView.builder(
+                      itemCount: features2.length,
+                      physics: const ClampingScrollPhysics(),
+                      shrinkWrap: true,
+                      itemBuilder: (context, index) {
+                        return FeaturesTile(
+                          title: features2[index].getTitle(),
+                          description: features2[index].getDesc(),
+                        );
+                      }),
+                ),
+              ],
+            ),
+            smallScreen: Column(
+              children: <Widget>[
+                ListView.builder(
+                    itemCount: features1.length,
+                    shrinkWrap: true,
+                    physics: const ClampingScrollPhysics(),
+                    itemBuilder: (context, index) {
+                      return FeaturesTile(
+                        title: features1[index].getTitle(),
+                        description: features1[index].getDesc(),
+                      );
+                    }),
+                SizedBox(
+                  height: 650,
+                  width: 350,
+                  child: ListView.builder(
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      itemCount: screenshots.length,
+                      itemBuilder: (context, index) {
+                        return Image.asset("assets/${screenshots[index]}");
+                      }),
+                ),
+                ListView.builder(
+                    itemCount: features2.length,
+                    physics: const ClampingScrollPhysics(),
+                    shrinkWrap: true,
+                    itemBuilder: (context, index) {
+                      return FeaturesTile(
+                        title: features2[index].getTitle(),
+                        description: features2[index].getDesc(),
+                      );
+                    }),
+              ],
             ),
           )
         ],
@@ -152,13 +148,13 @@ class _FeatureSliderState extends State<FeatureSlider> {
 class FeaturesTile extends StatelessWidget {
   String title, description;
 
-  FeaturesTile({required this.title, required this.description});
+  FeaturesTile({super.key, required this.title, required this.description});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 16),
-      padding: EdgeInsets.symmetric(horizontal: 30),
+      margin: const EdgeInsets.only(bottom: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 30),
       child: Column(
         children: <Widget>[
           Image.asset(
@@ -166,26 +162,26 @@ class FeaturesTile extends StatelessWidget {
             width: 40,
             height: 40,
           ),
-          SizedBox(
+          const SizedBox(
             height: 16,
           ),
           Text(
             title,
             textAlign: TextAlign.center,
-            style: TextStyle(
+            style: const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.w500,
                 color: Color(0xCC262626)),
           ),
-          SizedBox(
+          const SizedBox(
             height: 8,
           ),
           Text(
             description,
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300),
+            style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w300),
           ),
-          SizedBox(
+          const SizedBox(
             height: 24,
           ),
         ],

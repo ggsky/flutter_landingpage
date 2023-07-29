@@ -11,7 +11,7 @@ import 'package:shared_preferences/shared_preferences.dart';
   *
 */
 class RequestUtil {
-  static RequestUtil _instance = RequestUtil._internal();
+  static final RequestUtil _instance = RequestUtil._internal();
   factory RequestUtil() => _instance;
 
   late Dio dio;
@@ -22,10 +22,10 @@ class RequestUtil {
       // 请求基地址,可以包含子路径
       baseUrl: Api.host,
       //连接服务器超时时间，单位是毫秒.
-      connectTimeout: 10000,
+      connectTimeout: const Duration(milliseconds: 10000),
 
       // 响应流上前后两次接受到数据的间隔，单位为毫秒。
-      receiveTimeout: 5000,
+      receiveTimeout: const Duration(milliseconds: 5000),
 
       // Http请求头.
       headers: {},
@@ -58,7 +58,7 @@ class RequestUtil {
         // 在返回响应数据之前做一些预处理
         return handler.next(response); // continue
       },
-      onError: (DioError e, handler) {
+      onError: (DioException e, handler) {
         // 当请求失败时做一些预处理
         return handler.next(e);
       },
@@ -91,7 +91,7 @@ class RequestUtil {
         options: requestOptions,
       );
       return response.data;
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       throw createErrorEntity(e);
     }
   }
@@ -166,27 +166,27 @@ class RequestUtil {
    * error统一处理
    */
 // 错误信息
-ErrorEntity createErrorEntity(DioError error) {
+ErrorEntity createErrorEntity(DioException error) {
   switch (error.type) {
-    case DioErrorType.cancel:
+    case DioExceptionType.cancel:
       {
         return ErrorEntity(code: -1, message: "请求取消");
       }
-    case DioErrorType.connectTimeout:
+    case DioExceptionType.connectionTimeout:
       {
         return ErrorEntity(code: -1, message: "连接超时");
       }
 
-    case DioErrorType.sendTimeout:
+    case DioExceptionType.sendTimeout:
       {
         return ErrorEntity(code: -1, message: "请求超时");
       }
 
-    case DioErrorType.receiveTimeout:
+    case DioExceptionType.receiveTimeout:
       {
         return ErrorEntity(code: -1, message: "响应超时");
       }
-    case DioErrorType.response:
+    case DioExceptionType.badResponse:
       {
         try {
           int? errCode = error.response?.statusCode;

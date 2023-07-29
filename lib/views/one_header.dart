@@ -5,6 +5,8 @@ import 'one_header_l.dart';
 import 'one_header_r.dart';
 
 class OneHeader extends StatelessWidget {
+  const OneHeader({super.key});
+
   @override
   Widget build(BuildContext context) {
     Size _size = MediaQuery.of(context).size;
@@ -16,15 +18,15 @@ class OneHeader extends StatelessWidget {
           gradient:
               LinearGradient(colors: [Color(0xffFEB692), Color(0xffEA5455)])),
       child: ResponsiveWidget(
-        largeScreen: Container(
+        largeScreen: SizedBox(
           width: _size.width > 1000 ? 1000 : _size.width,
           height: _size.height,
           child: Row(
             children: <Widget>[
-              Container(
+              SizedBox(
                   width: _size.width > 1000 ? 500 : _size.width / 2,
                   child: OneHeaderL()),
-              Container(
+              SizedBox(
                   width: _size.width > 1000 ? 500 : _size.width / 2,
                   child: OneHeaderR(
                     assetPath: "header_screenshot.jpg",

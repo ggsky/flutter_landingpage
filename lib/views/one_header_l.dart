@@ -10,7 +10,7 @@ class OneHeaderL extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      padding: EdgeInsets.symmetric(horizontal: 40),
+      padding: const EdgeInsets.symmetric(horizontal: 40),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: MediaQuery.of(context).size.width > 700
@@ -22,10 +22,10 @@ class OneHeaderL extends StatelessWidget {
             textAlign: MediaQuery.of(context).size.width > 700
                 ? null
                 : TextAlign.center,
-            style: TextStyle(
+            style: const TextStyle(
                 color: Colors.white, fontSize: 35, fontWeight: FontWeight.w500),
           ),
-          SizedBox(
+          const SizedBox(
             height: 16,
           ),
           Text(
@@ -33,10 +33,10 @@ class OneHeaderL extends StatelessWidget {
             textAlign: MediaQuery.of(context).size.width > 700
                 ? null
                 : TextAlign.center,
-            style: TextStyle(
+            style: const TextStyle(
                 color: Colors.white, fontSize: 20, fontWeight: FontWeight.w300),
           ),
-          SizedBox(
+          const SizedBox(
             height: 25,
           ),
           Row(

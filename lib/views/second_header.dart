@@ -2,11 +2,13 @@ import 'package:flutter_landingpage/dao/general_data.dart';
 import 'package:flutter/material.dart';
 
 class SecondHeader extends StatelessWidget {
+  const SecondHeader({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
-      padding: EdgeInsets.symmetric(vertical: 60, horizontal: 30),
+      padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 30),
       color: Colors.white,
       child: Column(
         children: <Widget>[
@@ -15,7 +17,7 @@ class SecondHeader extends StatelessWidget {
             width: 40,
             height: 40,
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Text(
@@ -24,13 +26,13 @@ class SecondHeader extends StatelessWidget {
             style: TextStyle(
                 fontSize: 25, color: headerColor, fontWeight: FontWeight.w500),
           ),
-          SizedBox(
+          const SizedBox(
             height: 8,
           ),
           Text(
             maindescription,
             textAlign: TextAlign.center,
-            style: TextStyle(fontWeight: FontWeight.w300),
+            style: const TextStyle(fontWeight: FontWeight.w300),
           ),
         ],
       ),

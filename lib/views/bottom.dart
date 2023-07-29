@@ -5,7 +5,7 @@ class Bottom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: 50, right: 40, left: 40),
+      padding: const EdgeInsets.only(top: 50, right: 40, left: 40),
       width: MediaQuery.of(context).size.width,
       color: Colors.white,
       child: Column(
@@ -14,23 +14,23 @@ class Bottom extends StatelessWidget {
           Text(
             closingTitle,
             textAlign: TextAlign.center,
-            style: TextStyle(
+            style: const TextStyle(
                 fontSize: 25,
                 fontWeight: FontWeight.w500,
                 color: Color(0xCC262626)),
           ),
-          SizedBox(
+          const SizedBox(
             height: 8,
           ),
           Text(
             closingDescription,
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300),
+            style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w300),
           ),
-          SizedBox(
+          const SizedBox(
             height: 24,
           ),
-          Image.asset("assets/" + coverImage)
+          Image.asset("assets/$coverImage")
         ],
       ),
     );

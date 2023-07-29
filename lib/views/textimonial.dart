@@ -3,8 +3,10 @@ import 'package:flutter_landingpage/model/testimonial_model.dart';
 import 'package:flutter/material.dart';
 
 class Textimonial extends StatefulWidget {
+  const Textimonial({super.key});
+
   @override
-  _TextimonialState createState() => _TextimonialState();
+  State<Textimonial>  createState() => _TextimonialState();
 }
 
 class _TextimonialState extends State<Textimonial> {
@@ -21,9 +23,9 @@ class _TextimonialState extends State<Textimonial> {
     return Container(
       width: MediaQuery.of(context).size.width,
       alignment: Alignment.center,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           gradient: LinearGradient(
-              colors: [const Color(0xffFEB692), const Color(0xffEA5455)])),
+              colors: [Color(0xffFEB692), Color(0xffEA5455)])),
       child: Container(
         width: MediaQuery.of(context).size.width > 800
             ? 800
@@ -33,7 +35,7 @@ class _TextimonialState extends State<Textimonial> {
           height: 400,
           child: ListView.builder(
               shrinkWrap: true,
-              physics: ClampingScrollPhysics(),
+              physics: const ClampingScrollPhysics(),
               scrollDirection: Axis.horizontal,
               itemCount: myAppTestimonials.length,
               itemBuilder: (context, index) {
@@ -56,7 +58,7 @@ class TestimonialTile extends StatelessWidget {
   double rating;
 
   TestimonialTile(
-      {required this.description,
+      {super.key, required this.description,
       required this.assetPathName,
       required this.name,
       required this.designation,
@@ -68,48 +70,48 @@ class TestimonialTile extends StatelessWidget {
       width: MediaQuery.of(context).size.width > 800
           ? 800
           : MediaQuery.of(context).size.width,
-      padding: EdgeInsets.symmetric(horizontal: 40, vertical: 40),
+      padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 40),
       child: Column(
         children: <Widget>[
           Text(
             description,
             textAlign: TextAlign.center,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.white,
               fontSize: 18,
               fontWeight: FontWeight.w300,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 16,
           ),
           StarRating(
             rating: rating,
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           ClipRRect(
-              borderRadius: BorderRadius.all(Radius.circular(60)),
+              borderRadius: const BorderRadius.all(Radius.circular(60)),
               child: Image.asset(
                 "assets/$assetPathName",
                 height: 50,
                 width: 50,
               )),
-          SizedBox(
+          const SizedBox(
             height: 8,
           ),
           Text(
             name,
-            style: TextStyle(
+            style: const TextStyle(
                 color: Colors.white, fontSize: 16, fontWeight: FontWeight.w300),
           ),
-          SizedBox(
+          const SizedBox(
             height: 4,
           ),
           Text(
             designation,
-            style: TextStyle(
+            style: const TextStyle(
                 color: Colors.white, fontSize: 14, fontWeight: FontWeight.w300),
           )
         ],
@@ -122,7 +124,7 @@ class TestimonialTile extends StatelessWidget {
 class StarRating extends StatelessWidget {
   double rating = 0;
 
-  StarRating({required this.rating});
+  StarRating({super.key, required this.rating});
 
   @override
   Widget build(BuildContext context) {
@@ -131,27 +133,27 @@ class StarRating extends StatelessWidget {
       children: <Widget>[
         Icon(
           rating >= 1 ? Icons.star : Icons.star_border,
-          color: Color(0xff262626),
+          color: const Color(0xff262626),
           size: 20,
         ),
         Icon(
           rating >= 2 ? Icons.star : Icons.star_border,
-          color: Color(0xff262626),
+          color: const Color(0xff262626),
           size: 20,
         ),
         Icon(
           rating >= 3 ? Icons.star : Icons.star_border,
-          color: Color(0xff262626),
+          color: const Color(0xff262626),
           size: 20,
         ),
         Icon(
           rating >= 4 ? Icons.star : Icons.star_border,
-          color: Color(0xff262626),
+          color: const Color(0xff262626),
           size: 20,
         ),
         Icon(
           rating >= 5 ? Icons.star : Icons.star_border,
-          color: Color(0xff262626),
+          color: const Color(0xff262626),
           size: 20,
         ),
       ],

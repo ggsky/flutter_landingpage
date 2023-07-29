@@ -16,7 +16,7 @@ class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
@@ -26,14 +26,14 @@ class _HomePageState extends State<HomePage> {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            OneHeader(),
-            SecondHeader(),
-            AppFeaturesList(),
-            FeatureSlider(),
+            const OneHeader(),
+            const SecondHeader(),
+            const AppFeaturesList(),
+            const FeatureSlider(),
             WatchVideo(),
-            Textimonial(),
+            const Textimonial(),
             Bottom(),
-            BelowBottom(),
+            const BelowBottom(),
             Footer()
           ],
         ),
