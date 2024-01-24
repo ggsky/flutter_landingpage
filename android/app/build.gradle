@@ -25,7 +25,7 @@ apply plugin: 'com.android.application'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
-    compileSdkVersion 32
+    compileSdkVersion 33
     signingConfigs {
         release {
             storeFile file("../sign/release.jks")
@@ -42,7 +42,7 @@ android {
     defaultConfig {
         applicationId "me.yoqi.flutter.applandingpage"
         minSdkVersion 16
-        targetSdkVersion 32
+        targetSdkVersion 33
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
