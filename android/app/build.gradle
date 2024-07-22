@@ -41,8 +41,8 @@ android {
 
     defaultConfig {
         applicationId "me.yoqi.flutter.applandingpage"
-        minSdkVersion 16
-        targetSdkVersion 33
+        minSdkVersion 21
+        targetSdkVersion 34
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
