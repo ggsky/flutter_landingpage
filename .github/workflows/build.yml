@@ -44,18 +44,25 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: flutter pub get
 
-      - name: Build apk
+      - name: Build web
         if: ${{ runner.os == 'Linux' }}
-        run: flutter build apk --debug --no-sound-null-safety
+        run: flutter build web -release --base-href "/flutter_landingpage/"
 
       # output some file:
-      - name: artifact
-        uses: actions/upload-artifact@v2
+      # - name: artifact
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: ${{runner.OS}}-artifact
+      #     path: |
+      #       # build/app/outputs/flutter-apk/**/*.apk
+      #       build/app/outputs/flutter-apk/app.apk
+      #       build/ios/**/*.ipa
+      #       build/web/web-app.zip
+      #       build/windows/runner/Release/
+
+      - name: github pages
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ runner.os == 'Linux' }}
         with:
-          name: ${{runner.OS}}-artifact
-          path: |
-            # build/app/outputs/flutter-apk/**/*.apk
-            build/app/outputs/flutter-apk/app.apk
-            build/ios/**/*.ipa
-            build/web/web-app.zip
-            build/windows/runner/Release/
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build/web
