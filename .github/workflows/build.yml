@@ -46,7 +46,7 @@ jobs:
 
       - name: Build web
         if: ${{ runner.os == 'Linux' }}
-        run: flutter build web -release --base-href "/flutter_landingpage/"
+        run: flutter build web --release --base-href "/flutter_landingpage/"
 
       # output some file:
       # - name: artifact
